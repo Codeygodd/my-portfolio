@@ -28,6 +28,7 @@ nav{
 }
 .nav-logo{
     max-width: 100px;
+	cursor: none;
 }
 .nav-links{
     list-style: none;
