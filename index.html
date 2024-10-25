@@ -1,184 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Personal Portfolio</title>
+
+    <!-- --------- UNICONS ---------- -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    <!-- --------- CSS ---------- -->
+    <link rel="stylesheet" href="my webb.css">
+
+    <!-- --------- FAVICON ---------- -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+
+    <title>Portfolio | Codeygodd</title>
 </head>
-
 <body>
-
-    <nav>
+   <div class="container">
+    <!-- --------------- HEADER --------------- -->
+      <nav id="header">
         <div class="nav-logo">
-            <a href="#">
-                <img src="logo.png">
+            <p class="nav-name">Pandey</p>
+            <span>.</span>
+        </div>
+        <div class="nav-menu" id="myNavMenu">
+            <ul class="nav_menu_list">
+                <li class="nav_list">
+                    <a href="#home" class="nav-link active-link">Home</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="#about" class="nav-link">About</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <div class="circle"></div>
+                </li>
+                <li class="nav_list">
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <div class="circle"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-button">
+            <button class="btn">Download CV <i class="uil uil-file-alt"></i></button>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="uil uil-bars" onclick="myMenuFunction()"></i>
+        </div>
+      </nav>
+
+
+    <!-- -------------- MAIN ---------------- -->
+    <main class="wrapper">
+       <!-- -------------- FEATURED BOX ---------------- -->
+       <section class="featured-box" id="home">
+          <div class="featured-text">
+            <div class="featured-text-card">
+                <span>Bishwas Pandey</span>
+            </div>
+            <div class="featured-name">
+                <p>I'm <span class="typedText"></span></p>
+            </div>
+            <div class="featured-text-info">
+                <p>Experienced frontend developer with a passion for creating visually stunning
+                   and user-friendly websites.
+                </p>
+            </div>
+            <div class="featured-text-btn">
+                <button class="btn blue-btn">Hire Me</button>
+        
+            </div>
+            <div class="social_icons">
+                <div class="icon"><i class="uil uil-instagram"></i></div>
+                <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
+                <div class="icon"><i class="uil uil-dribbble"></i></div>
+                <div class="icon"><i class="uil uil-github-alt"></i></div>
+            </div>
+          </div>
+          <div class="featured-image">
+            <div class="image">
+                <img src="photo.png" alt="avatar">
+            </div>
+          </div>
+          <div class="scroll-icon-box">
+            <a href="#about" class="scroll-btn">
+                <i class="uil uil-mouse-alt"></i>
+                <p>Scroll Down</p>
             </a>
-        </div>
+          </div>
 
-        <ul class="nav-links">
-            <li class="link"><a href="#">Home</a></li>
-            <li id="link1" class="link"><a href="#">My Services</a></li>
-            <li id="link2" class="link"><a href="#">About me</a></li>
-            <li id="link3" class="link"><a href="#">Contact me</a></li>
-        </ul>
-        <button class="btn"><a href="cv.jpg">Hire me</a></button>
-    </nav>
-
-    <header class="container">
-        <div class="content">
-            <span class="blur"></span>
-            <span class="blur"></span>
-            
-            <H1>Hi, I'm <span>BISHWAS</span> PANDEY</H1>
-            <p>
-                I am a student of national school of science with
-the career interest. I am developer, designer,
-programmer, gamer, etc. I am a very serious for
-my career with interest of computers and
-technology.
-            </p>
-           
-        </div>
-        <div class="image">
-            <img src="photo.png">
-        </div>
-        
-    </header>
-
-    <br><br><br><br><br><br><section class="container">
-        <h2 class="header">OUR FEATURES</h2>
-        <div class="features">
-            <div class="card">
-                <span><i class="ri-money-dollar-box-line"></i></span>
-                <h4>Free Tutorials</h4>
-                <p>
-                    My tutorials are in my github codeyninja are free and you don't need to pay anything.
-                </p>
-                <a href="https://github.com/Codeygodd?tab=repositories">Join Now <i class="ri-arrow-right-line"></i></a>
-            </div>
-            <div class="card">
-                <span><i class="ri-bug-line"></i></span>
-                <h4>Fix Your Bugs</h4>
-                <p>
-                    You have any problem in your codes? Tell me, i will help you fix it.
-                </p>
-                <a href="#">Contact Now <i class="ri-arrow-right-line"></i></a>
-            </div>
-            <div class="card">
-                <span><i class="ri-history-line"></i></span>
-                
-                <p>
-                   This is my one of the codes that measure the speed of the internet service, more accurately and precisely.
-                </p>
-                <a href="speed.html">Check it<i class="ri-arrow-right-line"></i></a>  
-            </div>
-            <div class="card">
-                <span><i class="ri-shake-hands-line"></i></span>
-                
-                <p>
-                    About to be released !  
-                </p>
-               
-            </div>
-
-        </div>
-    </section>
-
-        
-    <br><h2 style="margin-bottom: 1rem;
-            color: #fff;
-            text-align: center;
-            font-size: 2.25rem;
-            font-weight: 600;
-            " >About me</h2>
-        
-    
-
- <section class="container">
-
-	
-    <main class="row">
-            
-             <section class="col">
-                
-                <header class="title">
-                    <h2>EDUCATION</h2>
-                </header>
-    
-                <div class="contents">
-                    
-                    <div class="box">
-                    <h3>Little Step Academy</h3>
-                        <p>I have successfully completed my school life from class 1-10 showcasing a solid foundation in core subjects and dedication to academic achievement. Graduated From L.S.A in 2023, achieving excellent results in all subjects, computer which built to the groundwork for my educational and professional journey.</p>
-                    </div><br><br>
-                    <br>
-    
-                    <div class="box">
-                       
-                        <h3>National School of Sciences</h3>
-                        <p>I have currently enrolled in Grade 11, defining a fluent high school education with focus on academic excellence. Contiunously redefining a strong passion to learn computer science.</p>
+       </section>
+       <!-- -------------- ABOUT BOX ---------------- -->
+       <section class="section" id="about">
+          <div class="top-header">
+            <h1>About Me</h1>
+          </div>
+          <div class="row">
+            <div class="col">
+                <div class="about-info">
+                    <h3>My introduction</h3>
+                    <p>I am well-versed in HTML, CSS and JavaScript , and other cutting edge
+                       frameworks and libraries,which allows me to implement interactive features.
+                       Additionally, I have experirence working with often dedicated hiers like
+                       WordPress.
+                    </p>
+                    <div class="about-btn">
+                        <button class="btn">Download CV <i class="uil uil-import"></i></button>
                     </div>
-    
-                    
-    
                 </div>
-            </section>
-    
-            <section class="col">
-                
-                <header class="title">
-                    <h2>SKILLS</h2>
-                </header>
-    
-                <div class="contents">
-                    
-                    <div class="box">
-                        <h4>2019 - 2022</h4>
-                        <h3>Freelancer</h3>
-                        <p>Currently a Grade 11 student, I am dedicated to pursuing a well-rounded high school education with an emphasis on academic achievement. I consistently show a deep commitment to learning and have a keen interest in computer science.
-                        </p>
+            </div>
+            <div class="col">
+                <div class="skills-box">
+                    <div class="skills-header">
+                        <h3>Frontend</h3>
                     </div>
-    
-                    <div class="box">
-                        <h4>2020 - 2021</h4>
-                        <h3>Graphics Designer</h3>
-                        
+                    <div class="skills-list">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>Bootstrap</span>
+                        <span>JavaScript</span>                   
+                        <span>React</span>
                     </div>
-    
-                    <div class="box">
-                        <h4>2020 - 2024</h4>
-                        <h3>Top most tournament player in call of duty mobile & FNCS league. </h3>
-                        
-                        
-                    </div>
-    
                 </div>
-            </section>
-         
-        </main>
- </section>
- <br><br> <br><br> 
-        <div class="contact-page">
-            <h1>Contact Me</h1>
-            <form>
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name"><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email"><br>
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message"></textarea><br>
-                <input type="submit" value="Submit">
-            </form>
+                <div class="skills-box">
+                    <div class="skills-header">
+                        <h3>Backend</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span>PHP</span>
+                        <span>JAVA</span>
+                        <span>Python</span>
+                        <span>C++</span>
+                    </div>
+                </div>
+                <div class="skills-box">
+                    <div class="skills-header">
+                        <h3>Database</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span>MySQL</span>
+                        <span>MongoDB</span>
+                    </div>
+                </div>
+            </div>
+          </div>
+       </section>
+
+       <!-- -------------- PROJECT BOX ---------------- -->
+
+       <section class="section" id="projects">
+          <div class="top-header">
+              <h1>Projects</h1>
+          </div>
+          <div class="project-container">
+            <div class="project-box">
+                <i class="uil uil-briefcase-alt"></i>
+                <h3>Completed</h3>
+                <label>15+ Finished Projects</label>
+            </div>
+            <div class="project-box">
+                <i class="uil uil-users-alt"></i>
+                <h3>Clients</h3>
+                <label>25+ Happy Clients</label>
+            </div>
+            <div class="project-box">
+                <i class="uil uil-award"></i>
+                <h3>Experience</h3>
+                <label>2+ Years in the field</label>
+            </div>
+          </div>
+       </section>
+
+       <!-- -------------- CONTACT BOX ---------------- -->
+
+       <section class="section" id="contact">
+          <div class="top-header">
+            <h1>Get in touch</h1>
+            <span>Do you have a project in your mind, contact me here</span>
+          </div>
+          <div class="row">
+             <div class="col">
+                <div class="contact-info">
+                    <h2>Find Me <i class="uil uil-corner-right-down"></i></h2>
+                    <p><i class="uil uil-envelope"></i> Email: pandeybiswas1@gmail.com</p>
+                    <p><i class="uil uil-phone"></i> Tel: +9779767550939</p>
+                </div>
+             </div>
+             <div class="col">
+                <div class="form-control">
+                    <div class="form-inputs">
+                        <input type="text" class="input-field" placeholder="Name">
+                        <input type="text" class="input-field" placeholder="Email">
+                    </div>
+                    <div class="text-area">
+                        <textarea placeholder="Message"></textarea>
+                    </div>
+                    <div class="form-button">
+                        <button class="btn">Send <i class="uil uil-message"></i></button>
+                    </div>
+                </div>
+             </div>
+          </div>
+       </section>
+
+    </main>
+
+
+    <!-- --------------- FOOTER --------------- -->
+    <footer>
+        <div class="top-footer">
+            <p>Bishwas pandey .</p>
         </div>
-        <br><br>
-        <div class="copyright">
-            Copyright © 2024 Codeyninja. All Rights Reserved.
-        
-   
-<script src="script.js"></script>
+        <div class="middle-footer">
+            <ul class="footer-menu">
+                <li class="footer_menu_list">
+                    <a href="#home">Home</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#about">About</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#projects">Projects</a>
+                </li>
+                <li class="footer_menu_list">
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-social-icons">
+            <div class="icon"><i class="uil uil-instagram"></i></div>
+            <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
+            <div class="icon"><i class="uil uil-dribbble"></i></div>
+            <div class="icon"><i class="uil uil-github-alt"></i></div>
+        </div>
+        <div class="bottom-footer">
+            <p>Copyright &copy; <a href="#home" style="text-decoration: none;">Bishwas Pandey</a> - All rights reserved</p>
+        </div>
+    </footer>
+
+    </div>
+
+
+
+
+    <!-- ----- TYPING JS Link ----- -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+       <!-- ----- SCROLL REVEAL JS Link----- -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ----- MAIN JS ----- -->
+    <script src="my web.js"></script>
 </body>
-
 </html>
