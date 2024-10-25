@@ -1,75 +1,117 @@
-let startTime, endTime;
-let imageSize = "";
-let image = new Image();
-let bitSpeed = document.getElementById("bits"),
-    kbSpeed = document.getElementById("kbs"),
-    mbSpeed = document.getElementById("mbs"),
-    info = document.getElementById("info");
+/* ----- NAVIGATION BAR FUNCTION ----- */
+    function myMenuFunction(){
+      var menuBtn = document.getElementById("myNavMenu");
 
-let totalBitSpeed = 0;
-let totalKbSpeed = 0;
-let totalMbSpeed = 0;
-let numTests = 1;
-let testCompleted = 0;
-
-// Get random image from unsplash.com
-let imageApi = "https://source.unsplash.com/random?topic=nature";
-
-// When image loads
-image.onload = async function () {
-    endTime = new Date().getTime();
-
-    // Get image size
-    await fetch(imageApi).then((response) => {
-        imageSize = response.headers.get("content-length");
-        calculateSpeed();
-    });
-};
-
-// Function to calculate speed
-function calculateSpeed() {
-    // Time taken in seconds
-    let timeDuration = (endTime - startTime) / 1000;
-    // Total bits
-    let loadedBits = imageSize * 8;
-    let speedInBts = loadedBits / timeDuration;
-    let speedInKbs = speedInBts / 1024;
-    let speedInMbs = speedInKbs / 1024;
-
-    totalBitSpeed += speedInBts;
-    totalKbSpeed += speedInKbs;
-    totalMbSpeed += speedInMbs;
-
-    testCompleted++;
-
-    // If all tests completed (we get 5 image then calculate average)
-    if (testCompleted === numTests) {
-        let averageSpeedInBps = (totalBitSpeed / numTests).toFixed(2);
-        let averageSpeedInKbps = (totalKbSpeed / numTests).toFixed(2);
-        let averageSpeedInMbps = (totalMbSpeed / numTests).toFixed(2);
-
-        // Display average speeds
-        bitSpeed.innerHTML += `${averageSpeedInBps}`;
-        kbSpeed.innerHTML += `${averageSpeedInKbps}`;
-        mbSpeed.innerHTML += `${averageSpeedInMbps}`;
-        info.innerHTML = "Test Completed!";
-    } else {
-        // Run the next test
-        startTime = new Date().getTime();
-        image.src = imageApi;
+      if(menuBtn.className === "nav-menu"){
+        menuBtn.className += " responsive";
+      } else {
+        menuBtn.className = "nav-menu";
+      }
     }
-}
 
-// Initial function to start tests
-const init = async () => {
-    info.innerHTML = "Testing...";
-    startTime = new Date().getTime();
-    image.src = imageApi;
-};
+/* ----- ADD SHADOW ON NAVIGATION BAR WHILE SCROLLING ----- */
+    window.onscroll = function() {headerShadow()};
 
-// Run tests when window loads
-window.onload = () => {
-    for (let i = 0; i < numTests; i++) {
-        init();
+    function headerShadow() {
+      const navHeader =document.getElementById("header");
+
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop >  50) {
+
+        navHeader.style.boxShadow = "0 1px 6px rgba(0, 0, 0, 0.1)";
+        navHeader.style.height = "70px";
+        navHeader.style.lineHeight = "70px";
+
+      } else {
+
+        navHeader.style.boxShadow = "none";
+        navHeader.style.height = "90px";
+        navHeader.style.lineHeight = "90px";
+
+      }
     }
-};
+
+
+/* ----- TYPING EFFECT ----- */
+   var typingEffect = new Typed(".typedText",{
+      strings : ["Designer","Youtuber","Developer"],
+      loop : true,
+      typeSpeed : 100, 
+      backSpeed : 80,
+      backDelay : 2000
+   })
+
+
+/* ----- ## -- SCROLL REVEAL ANIMATION -- ## ----- */
+   const sr = ScrollReveal({
+          origin: 'top',
+          distance: '80px',
+          duration: 2000,
+          reset: true     
+   })
+
+  /* -- HOME -- */
+  sr.reveal('.featured-text-card',{})
+  sr.reveal('.featured-name',{delay: 100})
+  sr.reveal('.featured-text-info',{delay: 200})
+  sr.reveal('.featured-text-btn',{delay: 200})
+  sr.reveal('.social_icons',{delay: 200})
+  sr.reveal('.featured-image',{delay: 300})
+  
+
+  /* -- PROJECT BOX -- */
+  sr.reveal('.project-box',{interval: 200})
+
+  /* -- HEADINGS -- */
+  sr.reveal('.top-header',{})
+
+/* ----- ## -- SCROLL REVEAL LEFT_RIGHT ANIMATION -- ## ----- */
+
+  /* -- ABOUT INFO & CONTACT INFO -- */
+  const srLeft = ScrollReveal({
+    origin: 'left',
+    distance: '80px',
+    duration: 2000,
+    reset: true
+  })
+  
+  srLeft.reveal('.about-info',{delay: 100})
+  srLeft.reveal('.contact-info',{delay: 100})
+
+  /* -- ABOUT SKILLS & FORM BOX -- */
+  const srRight = ScrollReveal({
+    origin: 'right',
+    distance: '80px',
+    duration: 2000,
+    reset: true
+  })
+  
+  srRight.reveal('.skills-box',{delay: 100})
+  srRight.reveal('.form-control',{delay: 100})
+  
+
+
+/* ----- CHANGE ACTIVE LINK ----- */
+  
+  const sections = document.querySelectorAll('section[id]')
+
+  function scrollActive() {
+    const scrollY = window.scrollY;
+
+    sections.forEach(current =>{
+      const sectionHeight = current.offsetHeight,
+          sectionTop = current.offsetTop - 50,
+        sectionId = current.getAttribute('id')
+
+      if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) { 
+
+          document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.add('active-link')
+
+      }  else {
+
+        document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.remove('active-link')
+
+      }
+    })
+  }
+
+  window.addEventListener('scroll', scrollActive)
